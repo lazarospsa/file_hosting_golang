@@ -34,7 +34,7 @@ func uploadFile(w http.ResponseWriter, r *http.Request) {
 	fmt.Printf("MIME Header: %+v\n", handler.Header)
 
 	// Create file
-	dst, err := os.Create(handler.Filename)
+	dst, err := os.Create("uploads/"+handler.Filename)
 	defer dst.Close()
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
