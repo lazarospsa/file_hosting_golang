@@ -9,7 +9,6 @@ import (
 )
 // Compile templates on start of the application
 var templates = template.Must(template.ParseFiles("public/upload.html"))
-// http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("public"))))
 
 // Display the named template
 func display(w http.ResponseWriter, page string, data interface{}) {
@@ -62,6 +61,7 @@ func uploadHandler(w http.ResponseWriter, r *http.Request) {
 func main() {
 	// Upload route
 	http.HandleFunc("/upload", uploadHandler)
+	http.Handle("/public/", http.StripPrefix("/public/", http.FileServer(http.Dir("public"))))
 
 	//Listen on port 8080
 	http.ListenAndServe(":8080", nil)

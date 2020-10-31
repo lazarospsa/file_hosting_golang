@@ -5,22 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Upload File</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.2/cerulean/bootstrap.min.css" integrity="sha384-3fdgwJw17Bi87e1QQ4fsLn4rUFqWw//KU0g8TvV6quvahISRewev6/EocKNuJmEw" crossorigin="anonymous">
   </head>
   <body>
-
-    <div id="FileUpload">
-      <div class="wrapper">
-        <div class="upload">
-          <p>Drag files here or <span class="upload__button">Browse</span></p>
-          <form enctype="multipart/form-data" action="/upload" method="post">
-          <input type="file" name="myFile" />
-          <input type="submit" value="upload" />
-        </form>
-        </div>
+<center>
+  <div class="jumbotron">
+    <form enctype="multipart/form-data" action="/upload" method="post">
+      <div class="form-group">
+        <input class="form-control-file" type="file" name="myFile" />
       </div>
-    </div>
-
+        <input class="btn btn-primary" type="submit" value="upload" />
+    </form>
+  </div>
+</center>
   </body>
 </html>
 
