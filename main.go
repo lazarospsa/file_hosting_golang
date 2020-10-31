@@ -7,7 +7,6 @@ import (
 	"os"
 	"text/template"
 )
-
 // Compile templates on start of the application
 var templates = template.Must(template.ParseFiles("public/upload.html"))
 
